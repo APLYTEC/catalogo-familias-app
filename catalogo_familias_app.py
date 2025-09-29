@@ -39,7 +39,7 @@ familia_seleccionada = st.selectbox("Selecciona una familia:", sorted(familias))
 
 if familia_seleccionada:
     subfamilias = df[df["Familia"] == familia_seleccionada]["Subfamilia"].dropna().unique()
-    subfamilia_seleccionada = st.selectbox("Selecciona una subfamilia:", sorted(list(subfamilias)))
+    subfamilia_seleccionada = st.selectbox("Selecciona una subfamilia:", sorted(subfamilias.tolist()))
 
     if subfamilia_seleccionada:
         productos = df[(df["Familia"] == familia_seleccionada) & (df["Subfamilia"] == subfamilia_seleccionada)]
